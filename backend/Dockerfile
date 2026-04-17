@@ -2,13 +2,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY backend/requirements.txt ./requirements.txt
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY backend/ ./backend/
-COPY data/ ./data/
-
-WORKDIR /app/backend
+COPY . .
 
 ENV PORT=8080
 
